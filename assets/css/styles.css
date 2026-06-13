@@ -253,46 +253,50 @@ body {
   pointer-events: none;
 }
 
-/* ---- Page 2: fit the whole quiz (incl. button) on one screen ------------ */
-/* On tall enough viewports the page fills exactly one screen: header at the
-   top, the grid stretches to fill the middle, the button sits at the bottom.
-   Shorter screens keep the normal scrollable layout. */
+/* ---- Pages 2 & 3: fit the whole page (incl. button) on one screen -------- */
+/* On tall enough viewports the page fills exactly one screen: heading block
+   at the top, the grid stretches to fill the middle, the button sits at the
+   bottom (one table-cell wide, centered). Shorter screens keep the normal
+   scrollable layout. */
 
 @media (min-height: 1200px) {
-  .page--quiz {
+  .page--fit {
     height: 100vh;          /* fixed so the grid is forced into the leftover space */
     display: flex;
     flex-direction: column;
     padding-bottom: 32px;
   }
 
-  .page--quiz .report-head,
-  .page--quiz .instruction,
-  .page--quiz #evaluate {
+  /* heading / intro blocks keep their natural height at the top */
+  .page--fit .report-head,
+  .page--fit .instruction,
+  .page--fit .title,
+  .page--fit .subtitle,
+  .page--fit .btn {
     flex: 0 0 auto;
   }
 
-  .page--quiz #evaluate {
+  .page--fit .btn {
     margin-top: 0;
     align-self: center;                 /* don't stretch full width */
     width: calc((100% - 2 * 14px) / 3); /* one table-cell wide (3 cols, 14px gap) */
   }
 
   /* grid takes the remaining height; its rows share that height equally */
-  .page--quiz .grid {
+  .page--fit .grid {
     flex: 1 1 auto;
     min-height: 0;          /* let the grid shrink below its content height */
     grid-auto-rows: 1fr;
     margin: 0.6em 0 1em;
   }
 
-  .page--quiz .grid .cell {
+  .page--fit .grid .cell {
     min-height: 0;          /* allow cells to shrink to their row height */
     justify-content: center;
     gap: 4px;
   }
 
-  /* the icon grows to fill the leftover cell height (caption keeps its size) */
+  /* page 2 only: the icon grows to fill the leftover cell height */
   .page--quiz .grid .cell .icon {
     flex: 1 1 auto;
     min-height: 0;
