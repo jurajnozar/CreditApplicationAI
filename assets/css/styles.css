@@ -170,7 +170,6 @@ body {
 
 .cell {
   position: relative;
-  border: 2px solid var(--line);
   border-radius: 12px;
   padding: 14px;
   min-height: 200px;
