@@ -181,16 +181,18 @@ body {
   background: #fff;
 }
 
-/* page 2 cells are clickable */
+/* page 2 cells are clickable, borderless, and tightly padded so the
+   illustration uses as much of the cell as possible */
 .grid.quiz .cell {
   cursor: pointer;
   user-select: none;
-  transition: border-color 0.1s ease, box-shadow 0.1s ease;
+  border: none;
+  padding: 5px;
+  transition: box-shadow 0.1s ease;
 }
 
 .grid.quiz .cell:hover {
-  border-color: var(--blue);
-  box-shadow: 0 0 0 2px rgba(11, 118, 159, 0.15);
+  box-shadow: 0 0 0 2px rgba(11, 118, 159, 0.25);
 }
 
 .cell .icon {
@@ -249,6 +251,60 @@ body {
   min-height: 26px;
   object-fit: contain;
   pointer-events: none;
+}
+
+/* ---- Page 2: fit the whole quiz (incl. button) on one screen ------------ */
+/* On tall enough viewports the page fills exactly one screen: header at the
+   top, the grid stretches to fill the middle, the button sits at the bottom.
+   Shorter screens keep the normal scrollable layout. */
+
+@media (min-height: 1200px) {
+  .page--quiz {
+    height: 100vh;          /* fixed so the grid is forced into the leftover space */
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 32px;
+  }
+
+  .page--quiz .report-head,
+  .page--quiz .instruction,
+  .page--quiz #evaluate {
+    flex: 0 0 auto;
+  }
+
+  .page--quiz #evaluate {
+    margin-top: 0;
+    align-self: center;                 /* don't stretch full width */
+    width: calc((100% - 2 * 14px) / 3); /* one table-cell wide (3 cols, 14px gap) */
+  }
+
+  /* grid takes the remaining height; its rows share that height equally */
+  .page--quiz .grid {
+    flex: 1 1 auto;
+    min-height: 0;          /* let the grid shrink below its content height */
+    grid-auto-rows: 1fr;
+    margin: 0.6em 0 1em;
+  }
+
+  .page--quiz .grid .cell {
+    min-height: 0;          /* allow cells to shrink to their row height */
+    justify-content: center;
+    gap: 4px;
+  }
+
+  /* the icon grows to fill the leftover cell height (caption keeps its size) */
+  .page--quiz .grid .cell .icon {
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: none;
+    width: 100%;
+    margin: 0;
+  }
+
+  .page--quiz .grid .cell .caption {
+    flex: 0 0 auto;
+    margin: 0;
+  }
 }
 
 /* ---- Responsive: 3 -> 2 -> 1 columns ------------------------------------ */
