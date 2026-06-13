@@ -110,6 +110,37 @@ body {
   box-shadow: 0 0 0 var(--ink);
 }
 
+/* ---- Page 1: fill the viewport, spread the three blocks ----------------- */
+/* illustrations pinned to the top, heading centered in the middle,
+   button at the bottom with a reasonable margin. */
+
+.page--intro {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.page--intro .intro {
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+.page--intro .title {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+}
+
+.page--intro .btn {
+  flex: 0 0 auto;
+  margin-top: 0;
+}
+
 /* ---- Page 1 intro illustrations ----------------------------------------- */
 
 .intro {
