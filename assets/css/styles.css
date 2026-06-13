@@ -1,0 +1,239 @@
+/* ==========================================================================
+   Credit Risk Quiz — shared styles for all three pages
+   Theme taken from the wireframe: white background, Comic Sans hand-drawn
+   feel, black-ink illustrations, blue data labels, red risk explanations.
+   ========================================================================== */
+
+:root {
+  --blue: #0b769f;   /* data labels (from wireframe) */
+  --red: #c00000;    /* risk explanations (from wireframe) */
+  --ink: #1a1a1a;    /* headings / general text */
+  --line: #d7d7d7;   /* light cell borders */
+  --bg: #ffffff;
+  --font: "Comic Sans MS", "Comic Sans", "Chalkboard SE", "Segoe Print", cursive;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+  text-align: center;
+}
+
+/* ---- Headings & text ---------------------------------------------------- */
+
+.title {
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  color: var(--ink);
+  margin: 0.3em 0;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  color: var(--ink);
+  max-width: 760px;
+  margin: 0.6em auto 1.4em;
+}
+
+.versus {
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  color: var(--ink);
+  font-weight: bold;
+}
+
+.report-head {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: var(--blue);
+  margin: 0 0 0.4em;
+}
+
+.report-head .company {
+  color: var(--ink);
+}
+
+.instruction {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: var(--ink);
+  max-width: 820px;
+  margin: 0 auto 1.6em;
+}
+
+/* highlight the score number on the results page */
+.result-count {
+  color: var(--red);
+  font-weight: bold;
+}
+
+/* ---- Buttons ------------------------------------------------------------ */
+
+.btn {
+  font-family: var(--font);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: #fff;
+  background: var(--blue);
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  padding: 0.5em 1.6em;
+  margin-top: 1.4em;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 0.05s ease, box-shadow 0.05s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 var(--ink);
+}
+
+/* ---- Page 1 intro illustrations ----------------------------------------- */
+
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 4vw, 48px);
+  flex-wrap: wrap;
+  margin: 1.5em 0;
+}
+
+.intro img {
+  max-height: 260px;
+  max-width: 40vw;
+  height: auto;
+  width: auto;
+}
+
+/* ---- The 3 x 5 grid (shared by page 2 and page 3) ----------------------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 1em auto;
+}
+
+.cell {
+  position: relative;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  padding: 14px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #fff;
+}
+
+/* page 2 cells are clickable */
+.grid.quiz .cell {
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 0.1s ease, box-shadow 0.1s ease;
+}
+
+.grid.quiz .cell:hover {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 2px rgba(11, 118, 159, 0.15);
+}
+
+.cell .icon {
+  max-width: 100%;
+  max-height: 120px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.cell .caption {
+  color: var(--blue);
+  font-size: 0.95rem;
+  margin-top: auto;
+}
+
+.cell .explanation {
+  color: var(--red);
+  font-size: 0.9rem;
+  margin: 0 0 10px;
+}
+
+/* page 3 cell label sits under the explanation */
+.cell .caption.results {
+  margin-top: auto;
+  font-size: 0.9rem;
+}
+
+/* ---- Page 2: Risk-marked overlay (toggle on click) ---------------------- */
+
+.cell .risk-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  pointer-events: none;       /* clicks pass through to the cell */
+  display: none;
+}
+
+.cell.marked .risk-overlay {
+  display: block;
+}
+
+/* ---- Page 3: Selected badge (bottom-right, ~15%) ------------------------ */
+
+.cell .selected-badge {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  width: 15%;
+  height: 15%;
+  min-width: 26px;
+  min-height: 26px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* ---- Responsive: 3 -> 2 -> 1 columns ------------------------------------ */
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro img {
+    max-width: 70vw;
+  }
+}
