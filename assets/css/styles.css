@@ -259,10 +259,10 @@ body {
   position: absolute;
   right: 6px;
   bottom: 6px;
-  width: 15%;
-  height: 15%;
-  min-width: 26px;
-  min-height: 26px;
+  width: 30%;
+  height: 30%;
+  min-width: 52px;
+  min-height: 52px;
   object-fit: contain;
   pointer-events: none;
 }

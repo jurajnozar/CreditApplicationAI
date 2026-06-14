@@ -35,13 +35,18 @@
     el.appendChild(explanation);
     el.appendChild(caption);
 
+    // every cell is a risk: a green check where the user marked it,
+    // a red risk mark (same corner/size) where they missed it
+    var badge = document.createElement("img");
+    badge.className = "selected-badge";
     if (markedSet.has(index)) {
-      var badge = document.createElement("img");
-      badge.className = "selected-badge";
       badge.src = "../img/Selected.svg";
       badge.alt = "Označili jste toto pole";
-      el.appendChild(badge);
+    } else {
+      badge.src = "../img/Risk-marked.svg";
+      badge.alt = "Toto pole jste neoznačili – přitom je rizikové";
     }
+    el.appendChild(badge);
 
     grid.appendChild(el);
   });
