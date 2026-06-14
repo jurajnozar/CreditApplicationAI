@@ -8,6 +8,7 @@
   --blue: #0b769f;   /* data labels (from wireframe) */
   --red: #c00000;    /* risk explanations (from wireframe) */
   --green: #3a7c22;  /* correct / found (from wireframe) */
+  --orange: #e97132; /* accent (from wireframe) */
   --ink: #1a1a1a;    /* headings / general text */
   --line: #d7d7d7;   /* light cell borders */
   --bg: #ffffff;
@@ -115,6 +116,15 @@ body {
 .btn:active {
   transform: translate(3px, 3px);
   box-shadow: 0 0 0 var(--ink);
+}
+
+/* per-page button colours (page 3 keeps the default blue) */
+.page--intro .btn {
+  background: #7bc47f; /* lighter, softer green */
+}
+
+.page--quiz .btn {
+  background: var(--orange);
 }
 
 /* ---- Page 1: fill the viewport, spread the three blocks ----------------- */
