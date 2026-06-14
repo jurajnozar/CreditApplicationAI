@@ -50,7 +50,7 @@
       badge.src = "../img/Selected.svg";
       badge.alt = "Označili jste toto pole";
     } else {
-      badge.src = "../img/Risk-marked.svg";
+      badge.src = "../img/Risk-marked2.svg";
       badge.alt = "Toto pole jste neoznačili – přitom je rizikové";
     }
     el.appendChild(badge);

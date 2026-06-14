@@ -1,7 +1,7 @@
 /*
  * Page 2 — the interactive quiz grid.
  * Builds the 3 x 5 grid from CELLS (data.js). Clicking a cell toggles the
- * Risk-marked.svg overlay. "Vyhodnotit" stores the marked cell indices in
+ * Risk-marked2.svg overlay. "Vyhodnotit" stores the marked cell indices in
  * sessionStorage and moves to the results page.
  */
 (function () {
@@ -23,7 +23,7 @@
 
     var overlay = document.createElement("img");
     overlay.className = "risk-overlay";
-    overlay.src = "../img/Risk-marked.svg";
+    overlay.src = "../img/Risk-marked2.svg";
     overlay.alt = "Označeno jako rizikové";
 
     el.appendChild(icon);
