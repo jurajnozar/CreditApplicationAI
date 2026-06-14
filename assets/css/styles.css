@@ -204,6 +204,7 @@ body {
 
 .cell .caption {
   color: var(--blue);
+  font-family: "Aptos", "Calibri", "Segoe UI", Arial, sans-serif;
   font-size: 0.95rem;
   margin-top: auto;
 }
@@ -211,11 +212,13 @@ body {
 /* two-colour captions: black field name, blue value (matches the wireframe) */
 .cell .caption .cap-k {
   color: var(--ink);
+  font-size: 0.85rem;
 }
 
 .cell .caption .cap-v {
   color: var(--blue);
   font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .cell .explanation {
