@@ -7,6 +7,7 @@
 :root {
   --blue: #0b769f;   /* data labels (from wireframe) */
   --red: #c00000;    /* risk explanations (from wireframe) */
+  --green: #3a7c22;  /* correct / found (from wireframe) */
   --ink: #1a1a1a;    /* headings / general text */
   --line: #d7d7d7;   /* light cell borders */
   --bg: #ffffff;
@@ -77,8 +78,13 @@ body {
   margin: 0 auto 1.6em;
 }
 
-/* highlight the score number on the results page */
+/* results headline: found count green, total (15) red */
 .result-count {
+  color: var(--green);
+  font-weight: bold;
+}
+
+.total-count {
   color: var(--red);
   font-weight: bold;
 }
