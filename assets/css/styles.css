@@ -338,6 +338,31 @@ body {
   margin: 0 0 6px;
 }
 
+/* page 3 only: the page-2 figure sits faint behind the text */
+.page--results .grid .cell .bg-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  opacity: 0.2;            /* 80% transparent */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* keep the text (and badge) above the faint background figure */
+.page--results .grid .cell .explanation,
+.page--results .grid .cell .caption {
+  position: relative;
+  z-index: 1;
+}
+
+.page--results .grid .cell .selected-badge {
+  z-index: 2;
+}
+
 /* drop to 2 columns when three 240px cells no longer fit, then to 1 */
 @media (max-width: 787px) {
   .page--grid .grid {

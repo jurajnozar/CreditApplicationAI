@@ -24,6 +24,12 @@
     var el = document.createElement("div");
     el.className = "cell";
 
+    // the page-2 figure, faint, sits behind the text
+    var bg = document.createElement("img");
+    bg.className = "bg-icon";
+    bg.src = "../img/" + cell.icon;
+    bg.alt = "";
+
     var explanation = document.createElement("p");
     explanation.className = "explanation";
     explanation.textContent = cell.explanation;
@@ -32,6 +38,7 @@
     caption.className = "caption results";
     caption.innerHTML = captionHTML(cell.label);
 
+    el.appendChild(bg);
     el.appendChild(explanation);
     el.appendChild(caption);
 
