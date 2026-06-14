@@ -252,61 +252,93 @@ body {
   pointer-events: none;
 }
 
-/* ---- Pages 2 & 3: fit the whole page (incl. button) on one screen -------- */
-/* On tall enough viewports the page fills exactly one screen: heading block
-   at the top, the grid stretches to fill the middle, the button sits at the
-   bottom (one table-cell wide, centered). Shorter screens keep the normal
-   scrollable layout. */
+/* ---- Pages 2 & 3: responsive table (min cell 240 x 170) + bottom button -- */
+/* Cells stay at least 240px wide and 170px tall. The table shows 3 columns,
+   dropping to 2 then 1 when the viewport is too narrow to fit cells at that
+   minimum width. The page fills the viewport height with the button pinned to
+   the bottom; when the cells don't all fit, the page just scrolls. Sized so
+   all five rows plus the button fit on a 1200px-tall screen. */
 
-@media (min-height: 1200px) {
-  .page--fit {
-    height: 100vh;          /* fixed so the grid is forced into the leftover space */
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 32px;
+.page--grid {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 32px;
+}
+
+.page--grid .report-head,
+.page--grid .instruction,
+.page--grid .title,
+.page--grid .subtitle {
+  flex: 0 0 auto;
+}
+
+/* tighten the page-3 heading block so its text-heavy table still fits 1200px */
+.page--grid .title {
+  margin: 0.15em 0;
+}
+
+.page--grid .subtitle {
+  margin: 0.3em auto 0.6em;
+}
+
+/* the button keeps its natural size; margin-top:auto pins it to the bottom
+   of the viewport when the table is short, and stays right after the grid
+   (so you scroll to it) when the table is taller than the screen */
+.page--grid .btn {
+  flex: 0 0 auto;
+  margin: auto 0 0;
+  align-self: center;                  /* centered, ~one table-cell wide */
+  width: calc((100% - 2 * 14px) / 3);
+}
+
+/* flex:0 keeps the grid at its natural height so the page scrolls when it
+   overflows instead of squashing the cells */
+.page--grid .grid {
+  flex: 0 0 auto;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  grid-auto-rows: minmax(170px, auto);
+  margin: 0.5em 0 0.8em;
+}
+
+.page--grid .grid .cell {
+  min-height: 170px;
+  justify-content: center;
+  gap: 6px;
+}
+
+.page--grid .grid .cell .caption {
+  margin: 0;
+}
+
+/* page 2 only: cap the illustration height so a tall image can't inflate a row */
+.page--quiz .grid .cell .icon {
+  max-height: 120px;
+  width: 100%;
+  margin: 0;
+}
+
+/* page 3 only: keep the explanation tight so the text-heavy cells still fit */
+.page--results .grid .cell .explanation {
+  margin: 0 0 6px;
+}
+
+/* drop to 2 columns when three 240px cells no longer fit, then to 1 */
+@media (max-width: 787px) {
+  .page--grid .grid {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
   }
-
-  /* heading / intro blocks keep their natural height at the top */
-  .page--fit .report-head,
-  .page--fit .instruction,
-  .page--fit .title,
-  .page--fit .subtitle,
-  .page--fit .btn {
-    flex: 0 0 auto;
+  .page--grid .btn {
+    width: calc((100% - 14px) / 2);
   }
+}
 
-  .page--fit .btn {
-    margin-top: 0;
-    align-self: center;                 /* don't stretch full width */
-    width: calc((100% - 2 * 14px) / 3); /* one table-cell wide (3 cols, 14px gap) */
+@media (max-width: 533px) {
+  .page--grid .grid {
+    grid-template-columns: minmax(240px, 1fr);
   }
-
-  /* grid takes the remaining height; its rows share that height equally */
-  .page--fit .grid {
-    flex: 1 1 auto;
-    min-height: 0;          /* let the grid shrink below its content height */
-    grid-auto-rows: 1fr;
-    margin: 0.6em 0 1em;
-  }
-
-  .page--fit .grid .cell {
-    min-height: 0;          /* allow cells to shrink to their row height */
-    justify-content: center;
-    gap: 4px;
-  }
-
-  /* page 2 only: the icon grows to fill the leftover cell height */
-  .page--quiz .grid .cell .icon {
-    flex: 1 1 auto;
-    min-height: 0;
-    max-height: none;
+  .page--grid .btn {
     width: 100%;
-    margin: 0;
-  }
-
-  .page--quiz .grid .cell .caption {
-    flex: 0 0 auto;
-    margin: 0;
   }
 }
 
