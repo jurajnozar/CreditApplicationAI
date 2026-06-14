@@ -30,7 +30,7 @@
 
     var caption = document.createElement("div");
     caption.className = "caption results";
-    caption.innerHTML = cell.label.join("<br>");
+    caption.innerHTML = captionHTML(cell.label);
 
     el.appendChild(explanation);
     el.appendChild(caption);

@@ -208,6 +208,16 @@ body {
   margin-top: auto;
 }
 
+/* two-colour captions: black field name, blue value (matches the wireframe) */
+.cell .caption .cap-k {
+  color: var(--ink);
+}
+
+.cell .caption .cap-v {
+  color: var(--blue);
+  font-weight: bold;
+}
+
 .cell .explanation {
   color: var(--red);
   font-size: 0.9rem;

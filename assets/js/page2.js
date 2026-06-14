@@ -19,7 +19,7 @@
 
     var caption = document.createElement("div");
     caption.className = "caption";
-    caption.innerHTML = cell.label.join("<br>");
+    caption.innerHTML = captionHTML(cell.label);
 
     var overlay = document.createElement("img");
     overlay.className = "risk-overlay";
