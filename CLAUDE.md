@@ -48,8 +48,9 @@ The shared `STORAGE_KEY` value is the contract between page 2 (writer) and page 
   centralized as CSS custom properties in `assets/css/styles.css`.
 - **Responsive grid:** `.grid` is CSS Grid, 3 cols → 2 cols (`max-width:760px`)
   → 1 col (`max-width:480px`).
-- **Cell icons** (`icon-01.png`…`icon-15.png`) and intro images were extracted
-  from the wireframe `.docx` (a zip); `icon-NN` maps to `CELLS[NN-1]`.
+- **Cell icons** (named after each cell's field, e.g. `address.png`,
+  `wages.png`, `existing-loan-1.png`) and intro images were extracted from the
+  wireframe `.docx` (a zip); each `CELLS[i].icon` names its file.
 - Czech UI text and diacritics are intentional — preserve them exactly.
 
 ## Verifying changes

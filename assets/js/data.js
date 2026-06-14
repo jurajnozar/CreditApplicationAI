@@ -13,36 +13,36 @@
  */
 const CELLS = [
   {
-    icon: "icon-01.png",
+    icon: "address.png",
     label: [{ k: "adresa", v: "Ústecký kraj" }],
     explanation: "Ústecký kraj patří mezi nejrizikovější regiony České republiky.",
   },
   {
-    icon: "icon-02.png",
+    icon: "owners.png",
     label: [{ k: "majitelé", v: "5, rodinná firma" }],
     explanation:
       "Příliš mnoho majitelů může vést k nejasnému vedení. Příbuzenské vztahy můžou ovlivnit chod firmy.",
   },
   {
-    icon: "icon-03.png",
+    icon: "founded.png",
     label: [{ k: "založeno", v: "17.2.2025" }],
     explanation:
       "Nová firma. Nemusí být etablovaná na trhu. Nebezpečí podvodu. Nesplňuje metodiku.",
   },
   {
-    icon: "icon-04.png",
+    icon: "sector.png",
     label: [{ k: "sektor", v: "Stavebnictví" }],
     explanation:
       "Název firmy nesouhlasí s hlavním oborem. Je možné, že se jedná o účelovou firmu.",
   },
   {
-    icon: "icon-05.png",
+    icon: "secondary-sectors.png",
     label: [{ k: "vedlejší sektory", v: "finanční poradenství, malo-obchod" }],
     explanation:
       "Příliš mnoho oborů není vhodné pro malou firmu. Tříští to pozornost majitelů.",
   },
   {
-    icon: "icon-06.png",
+    icon: "wages.png",
     label: [
       { k: "mzdy 2024", v: "1,2 mio. Kč" },
       { k: "mzdy 2025", v: "280 tis. Kč" },
@@ -51,49 +51,49 @@ const CELLS = [
       "Významný pokles mzdových nákladů. Je možné, že propustili zaměstnance, nebo nevyplácejí mzdy.",
   },
   {
-    icon: "icon-07.png",
+    icon: "profit-2024.png",
     label: [{ k: "zisk 2024", v: "276 tis. Kč" }],
     explanation:
       "Firma v tomto roce ještě neexistovala – jedná se o falešné výkazy.",
   },
   {
-    icon: "icon-08.png",
+    icon: "profit-2025.png",
     label: [{ k: "zisk 2025", v: "552 tis. Kč" }],
     explanation:
       "Zisk je přesně dvounásobek minulého roku – to je velice nepravděpodobné.",
   },
   {
-    icon: "icon-09.png",
+    icon: "balance-loans-2025.png",
     label: [{ k: "rozvaha/úvěry 2025", v: "856 mio. Kč" }],
     explanation:
       "Objem úvěrů neodpovídá, součtu úvěrů níže. Klient nepřiznal vše.",
   },
   {
-    icon: "icon-10.png",
+    icon: "main-bank.png",
     label: [{ k: "hlavní banka", v: "Unicredit" }],
     explanation:
       "Pro nás se jedná o neznámého klienta. Proč si nežádá o úvěr u své banky?",
   },
   {
-    icon: "icon-11.png",
+    icon: "existing-loan-1.png",
     label: [{ k: "existující úvěr", v: "Leasing BMW x7, 347 tis. Kč" }],
     explanation:
       "Luxusní vůz neodpovídá velikosti firmy. Malá výše úvěru k pořizovací ceně je podezřelá.",
   },
   {
-    icon: "icon-12.png",
+    icon: "existing-loan-2.png",
     label: [{ k: "existující úvěr", v: "Kreditní karta, 50 tis. Kč" }],
     explanation:
       "Minimální výše úvěru – může být účelový. Jenom jedna karta pro 5 majitelů.",
   },
   {
-    icon: "icon-13.png",
+    icon: "requested-loan-1.png",
     label: [{ k: "požadovaný úvěr", v: "Měnový limit, 1 mio. Kč" }],
     explanation:
       "Není jasné, na co klient potřebuje tento typ úvěru. Podezření na spekulaci na trhu – nefinancujeme.",
   },
   {
-    icon: "icon-14.png",
+    icon: "requested-loan-2.png",
     label: [
       { k: "požadovaný úvěr", v: "Splátkový, 10M Kč, 15 let, stavební materiál" },
     ],
@@ -101,7 +101,7 @@ const CELLS = [
       "Klient nemá na splátky, nevhodný typ úvěru pro daný účel, splatnost překračuje ekonomickou životnost aktiva.",
   },
   {
-    icon: "icon-15.png",
+    icon: "future-client-revenue.png",
     label: [{ k: "budoucí výnos z klienta", v: "8 %" }],
     explanation:
       "Příliš nízký výnos z neznámého a malého klienta. Nesplňuje cíle banky.",
