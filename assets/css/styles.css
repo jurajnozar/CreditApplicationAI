@@ -11,6 +11,7 @@
   --line: #d7d7d7;   /* light cell borders */
   --bg: #ffffff;
   --font: "Comic Sans MS", "Comic Sans", "Chalkboard SE", "Segoe Print", cursive;
+  --font-sans: "Aptos", "Calibri", "Segoe UI", Arial, sans-serif;
 }
 
 * {
@@ -204,7 +205,7 @@ body {
 
 .cell .caption {
   color: var(--blue);
-  font-family: "Aptos", "Calibri", "Segoe UI", Arial, sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.95rem;
   margin-top: auto;
 }
@@ -223,7 +224,8 @@ body {
 
 .cell .explanation {
   color: var(--red);
-  font-size: 0.9rem;
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
   margin: 0 0 10px;
 }
 
