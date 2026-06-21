@@ -57,7 +57,7 @@ body {
 }
 
 .versus {
-  font-size: clamp(2rem, 6vw, 3.4rem);
+  font-size: 1rem;
   color: var(--ink);
   font-weight: bold;
 }
@@ -128,7 +128,7 @@ body {
 }
 
 /* ---- Page 1: fill the viewport, spread the three blocks ----------------- */
-/* illustrations pinned to the top, heading centered in the middle,
+/* heading pinned to the top, illustrations centered in the middle,
    button at the bottom with a reasonable margin. */
 
 .page--intro {
@@ -140,17 +140,15 @@ body {
   padding-bottom: 48px;
 }
 
-.page--intro .intro {
+.page--intro .title {
   flex: 0 0 auto;
   margin: 0;
 }
 
-.page--intro .title {
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0;
+.page--intro .intro {
+  flex: 0 0 auto;
+  align-items: flex-end;   /* bottom-align the two pictures to each other */
+  margin: auto 0;          /* keep the block centered between title and button */
 }
 
 .page--intro .btn {
@@ -174,6 +172,17 @@ body {
   max-width: 40vw;
   height: auto;
   width: auto;
+}
+
+/* the man (left picture) is half-size, bottom-anchored with the right picture */
+.intro img:first-of-type {
+  max-height: 130px;
+  max-width: 20vw;
+}
+
+/* keep the "versus" label vertically centered against the right picture */
+.intro .versus {
+  align-self: center;
 }
 
 /* ---- The 3 x 3 grid (shared by page 2 and page 3) ----------------------- */
