@@ -133,6 +133,7 @@ body {
 
 .page--intro {
   min-height: 100vh;
+  min-width: 375px;        /* below 375px the page scrolls instead of shrinking */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -163,26 +164,30 @@ body {
   align-items: center;
   justify-content: center;
   gap: clamp(12px, 4vw, 48px);
-  flex-wrap: wrap;
+  flex-wrap: nowrap;       /* keep both pictures + "versus" on one row */
   margin: 1.5em 0;
 }
 
+/* right picture scales with the viewport, holding its size at a 375px-wide
+   screen so the row scrolls instead of wrapping or shrinking further */
 .intro img {
-  max-height: 260px;
-  max-width: 40vw;
-  height: auto;
+  height: clamp(155px, 41vw, 260px);
   width: auto;
+  flex-shrink: 0;
 }
 
 /* the man (left picture) is half-size, bottom-anchored with the right picture */
 .intro img:first-of-type {
-  max-height: 130px;
-  max-width: 20vw;
+  height: clamp(77px, 20.5vw, 130px);
 }
 
-/* keep the "versus" label vertically centered against the right picture */
+/* centre the "versus" label at 50% of the (bottom-aligned) left picture's height:
+   lift it by half the man's height, then shift it down by half its own height */
 .intro .versus {
-  align-self: center;
+  align-self: flex-end;
+  flex-shrink: 0;
+  margin-bottom: calc(clamp(77px, 20.5vw, 130px) / 2);
+  transform: translateY(50%);
 }
 
 /* ---- The 3 x 3 grid (shared by page 2 and page 3) ----------------------- */
@@ -421,9 +426,5 @@ body {
 @media (max-width: 480px) {
   .grid {
     grid-template-columns: 1fr;
-  }
-
-  .intro img {
-    max-width: 70vw;
   }
 }
