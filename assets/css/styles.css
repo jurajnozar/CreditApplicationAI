@@ -92,6 +92,17 @@ body {
   font-weight: bold;
 }
 
+/* page-2 instruction: +1 bod green, -1 bod red (matching the page scheme) */
+.score-plus {
+  color: var(--green);
+  font-weight: bold;
+}
+
+.score-minus {
+  color: var(--red);
+  font-weight: bold;
+}
+
 /* ---- Buttons ------------------------------------------------------------ */
 
 .btn {
