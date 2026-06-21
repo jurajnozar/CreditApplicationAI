@@ -50,6 +50,7 @@ body {
 }
 
 .subtitle {
+  font-family: var(--font-sans);   /* match the cell descriptions, not the headline */
   font-size: clamp(1rem, 2.2vw, 1.3rem);
   color: var(--ink);
   max-width: 760px;
@@ -73,7 +74,8 @@ body {
 }
 
 .instruction {
-  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-family: var(--font-sans);   /* match the cell descriptions, not the headline */
+  font-size: clamp(1rem, 2.2vw, 1.3rem);   /* same as page 3's .subtitle */
   color: var(--ink);
   max-width: 820px;
   margin: 0 auto 1.6em;

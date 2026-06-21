@@ -27,7 +27,7 @@ const CELLS = [
     icon: "founded.png",
     label: [{ k: "založeno", v: "17.2.2025" }],
     explanation:
-      "Nová firma. Nemusí být etablovaná na trhu. Nebezpečí podvodu. Nesplňuje metodiku.",
+      "Nová firma. Nemusí být etablovaná na trhu. Nebezpečí podvodu.",
   },
   {
     icon: "secondary-sectors.png",
@@ -58,7 +58,7 @@ const CELLS = [
   },
   {
     icon: "existing-loan-1.png",
-    label: [{ k: "existující úvěr", v: "Leasing BMW x7, 347 tis. Kč" }],
+    label: [{ k: "existující úvěr", v: "Leasing BMW X7, 347 tis. Kč" }],
     explanation:
       "Luxusní vůz neodpovídá velikosti firmy. Malá výše úvěru k pořizovací ceně je podezřelá.",
   },
