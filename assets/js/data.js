@@ -1,5 +1,5 @@
 /*
- * Single source of truth for the 15 credit-report cells.
+ * Single source of truth for the 9 credit-report cells.
  * Used by both page2 (quiz grid with icons) and page3 (results grid with
  * data labels + red risk explanations) so the grids stay perfectly aligned.
  *
@@ -30,12 +30,6 @@ const CELLS = [
       "Nová firma. Nemusí být etablovaná na trhu. Nebezpečí podvodu. Nesplňuje metodiku.",
   },
   {
-    icon: "sector.png",
-    label: [{ k: "sektor", v: "Stavebnictví" }],
-    explanation:
-      "Název firmy nesouhlasí s hlavním oborem. Je možné, že se jedná o účelovou firmu.",
-  },
-  {
     icon: "secondary-sectors.png",
     label: [{ k: "vedlejší sektory", v: "finanční poradenství, malo-obchod" }],
     explanation:
@@ -63,34 +57,10 @@ const CELLS = [
       "Zisk je přesně dvounásobek minulého roku – to je velice nepravděpodobné.",
   },
   {
-    icon: "balance-loans-2025.png",
-    label: [{ k: "rozvaha/úvěry 2025", v: "856 mio. Kč" }],
-    explanation:
-      "Objem úvěrů neodpovídá, součtu úvěrů níže. Klient nepřiznal vše.",
-  },
-  {
-    icon: "main-bank.png",
-    label: [{ k: "hlavní banka", v: "Unicredit" }],
-    explanation:
-      "Pro nás se jedná o neznámého klienta. Proč si nežádá o úvěr u své banky?",
-  },
-  {
     icon: "existing-loan-1.png",
     label: [{ k: "existující úvěr", v: "Leasing BMW x7, 347 tis. Kč" }],
     explanation:
       "Luxusní vůz neodpovídá velikosti firmy. Malá výše úvěru k pořizovací ceně je podezřelá.",
-  },
-  {
-    icon: "existing-loan-2.png",
-    label: [{ k: "existující úvěr", v: "Kreditní karta, 50 tis. Kč" }],
-    explanation:
-      "Minimální výše úvěru – může být účelový. Jenom jedna karta pro 5 majitelů.",
-  },
-  {
-    icon: "requested-loan-1.png",
-    label: [{ k: "požadovaný úvěr", v: "Měnový limit, 1 mio. Kč" }],
-    explanation:
-      "Není jasné, na co klient potřebuje tento typ úvěru. Podezření na spekulaci na trhu – nefinancujeme.",
   },
   {
     icon: "requested-loan-2.png",
@@ -99,12 +69,6 @@ const CELLS = [
     ],
     explanation:
       "Klient nemá na splátky, nevhodný typ úvěru pro daný účel, splatnost překračuje ekonomickou životnost aktiva.",
-  },
-  {
-    icon: "future-client-revenue.png",
-    label: [{ k: "budoucí výnos z klienta", v: "8 %" }],
-    explanation:
-      "Příliš nízký výnos z neznámého a malého klienta. Nesplňuje cíle banky.",
   },
 ];
 

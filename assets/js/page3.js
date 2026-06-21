@@ -1,7 +1,7 @@
 /*
  * Page 3 — the results / explanation page.
  * Reads the marked cell indices from sessionStorage, shows the count (RESULT)
- * in place of "###", and rebuilds the same 3 x 5 grid with the data label and
+ * in place of "###", and rebuilds the same 3 x 3 grid with the data label and
  * the red risk explanation. Cells the user marked on page 2 get the
  * Selected.svg badge in the bottom-right corner.
  * "Od začátku" clears the stored state and returns to the first page.
