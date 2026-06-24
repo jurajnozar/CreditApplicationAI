@@ -46,15 +46,18 @@ const CELLS = [
   },
   {
     icon: "profit-2024.png",
-    label: [{ k: "zisk 2024", v: "276 tis. Kč" }],
+    label: [
+        { k: "zisk 2024", v: "276 tis. Kč" },
+        { k: "zisk 2025", v: "552 tis. Kč" }
+    ],
     explanation:
       "Firma v tomto roce ještě neexistovala – jedná se o falešné výkazy.",
   },
   {
-    icon: "profit-2025.png",
-    label: [{ k: "zisk 2025", v: "552 tis. Kč" }],
+    icon: "main-bank.png",
+    label: [{ k: "hlavní banka", v: "Creditas" }],
     explanation:
-      "Zisk je přesně dvounásobek minulého roku – to je velice nepravděpodobné.",
+      "Pro nás neznámý klient. Creditas portfolio je víc rizikové. Proč si nežádá o úvěr u své banky?",
   },
   {
     icon: "existing-loan-1.png",
