@@ -71,6 +71,7 @@ body {
 
 .report-head .company {
   color: var(--ink);
+  font-size: clamp(1.6rem, 4vw, 2.6rem);   /* match page 3's .title */
 }
 
 .instruction {
